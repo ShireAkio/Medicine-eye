@@ -91,7 +91,7 @@ export default function VisionVedaPage() {
       <section className="py-12 px-6 bg-blue-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           <img
-            src="src/images/4f04c6d4-e16f-11eb-a36b-cbbf425404a0_1625920833567.avif"
+            src="/images/4f04c6d4-e16f-11eb-a36b-cbbf425404a0_1625920833567.avif"
             alt="Doctor Consultation"
             className="w-full h-auto rounded-xl shadow"
           />
@@ -109,11 +109,11 @@ export default function VisionVedaPage() {
         <h2 className="text-3xl font-bold text-center mb-8">Before & After</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="text-center">
-            <img src="src/images/5.webp" alt="Before and After 1" className="mx-auto mb-4 rounded-xl shadow" />
+            <img src="/images/5.webp" alt="Before and After 1" className="mx-auto mb-4 rounded-xl shadow" />
             <p>“मेरे पिताजी को नई रोशनी मिली। अब सब कुछ देख सकते हैं। धन्यवाद Vision Veda!”</p>
           </div>
           <div className="text-center">
-            <img src="src/images/sc5-img4.gif" alt="Before and After 2" className="mx-auto mb-4 rounded-xl shadow" />
+            <img src="/images/sc5-img4.gif" alt="Before and After 2" className="mx-auto mb-4 rounded-xl shadow" />
             <p>“पहले धुंधला दिखता था, अब सब साफ़ दिख रहा है – केवल 5 दिन में असर!”</p>
           </div>
         </div>
