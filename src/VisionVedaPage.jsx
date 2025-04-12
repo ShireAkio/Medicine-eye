@@ -34,24 +34,24 @@ export default function VisionVedaPage() {
 
   return (
     <div className="bg-white text-gray-900 font-sans">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-amber-100 to-orange-200 flex flex-col items-center justify-center text-center px-4" style={{ height: "4cm", minHeight: "200px" }}>
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          आपकी आँखों की रोशनी वापस ला सकता है Vision Veda
-        </h1>
-        <p className="text-lg md:text-xl max-w-2xl mb-6">
-          1 टैबलेट रात को सोने से पहले लें, इससे 10 दिन में आपकी आँखों की रोशनी वापस आ जाएगी।
-        </p>
-        <button
-          onClick={openPopup}
-          className="bg-red-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-600 transition"
-        >
-          अभी ऑर्डर करें
-        </button>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-amber-100 to-orange-200 flex flex-col items-center justify-center text-center" style={{ height: "4cm", minHeight: "200px" }}>
+        <div className="space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            आपकी आँखों की रोशनी वापस ला सकता है Vision Veda
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mb-6 leading-relaxed">
+            1 टैबलेट रात को सोने से पहले लें, इससे 10 दिन में आपकी आँखों की रोशनी वापस आ जाएगी।
+          </p>
+          <button
+            onClick={openPopup}
+            className="bg-red-500 text-white px-6 py-3 rounded-full font-semibold transition duration-200 ease-in-out focus:ring"
+          >
+            अभी ऑर्डर करें
+          </button>
 
         {isPopupOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-6 rounded shadow-md max-w-sm w-full relative">
+            <div className="bg-white p-6 rounded-xl shadow-md max-w-sm w-full relative">
               <button
                 className="absolute top-2 right-2 text-gray-500"
                 onClick={closePopup}
@@ -78,26 +78,27 @@ export default function VisionVedaPage() {
                 />
                 <button
                   type="submit"
-                  className="bg-blue-600 text-white px-4 py-2 rounded w-full"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold transition duration-200 ease-in-out focus:ring w-full"
                 >
                   सबमिट करें
                 </button>
               </form>
             </div>
           </div>
-        )}
+          )}
+        </div>
       </section>
 
-      <section className="py-12 px-6 bg-blue-50">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-blue-50">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <img
             src="/images/4f04c6d4-e16f-11eb-a36b-cbbf425404a0_1625920833567.avif"
             alt="Doctor Consultation"
-            className="w-full h-auto rounded-xl shadow max-w-full"
+            className="w-full h-auto rounded-xl object-cover shadow-md"
           />
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-blue-800">हमारे कंसल्टेंट से बात करना क्यों ज़रूरी है?</h2>
-            <p className="text-lg text-gray-800">
+            <h2 className="text-3xl font-bold mb-4 text-blue-800">हमारे कंसल्टेंट से बात करना क्यों ज़रूरी है?</h2>
+            <p className="text-lg text-gray-800 leading-relaxed">
               Vision Veda दवा हर व्यक्ति के लिए अलग-अलग तरह से काम कर सकती है। हमारी टीम के आयुर्वेदिक कंसल्टेंट आपकी आँखों की स्थिति, उम्र, जीवनशैली और अन्य स्वास्थ्य समस्याओं को समझकर आपके लिए सबसे उपयुक्त डोज़ और कोर्स तय करते हैं। यह व्यक्तिगत मार्गदर्शन उपचार को अधिक प्रभावशाली बनाता है।
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
@@ -105,14 +106,14 @@ export default function VisionVedaPage() {
                 href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20Vision%20Veda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-green-600 w-full sm:w-auto flex items-center justify-center gap-2"
+                className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-green-600 w-full sm:w-auto flex items-center justify-center gap-2 transition focus:ring"
               >
                 <span>📱</span>
                 WhatsApp पर बात करें
               </a>
               <a
                 href="tel:+919999999999"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-blue-700 w-full sm:w-auto flex items-center justify-center gap-2"
+                className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-blue-700 w-full sm:w-auto flex items-center justify-center gap-2 transition focus:ring"
               >
                 <span>📞</span>
                 कॉल करें: +91 99999 99999
@@ -122,23 +123,22 @@ export default function VisionVedaPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-12 px-6 bg-white">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <h2 className="text-3xl font-bold text-center mb-8">Before & After</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="text-center">
-            <img src="/images/5.webp" alt="Before and After 1" className="mx-auto mb-4 rounded-xl shadow max-w-full h-auto" />
+            <img src="/images/5.webp" alt="Before and After 1" className="mx-auto mb-4 rounded-xl object-cover shadow-md max-w-full h-auto" />
             <p>“मेरे पिताजी को नई रोशनी मिली। अब सब कुछ देख सकते हैं। धन्यवाद Vision Veda!”</p>
           </div>
           <div className="text-center">
-            <img src="/images/sc5-img4.gif" alt="Before and After 2" className="mx-auto mb-4 rounded-xl shadow max-w-full h-auto" />
+            <img src="/images/sc5-img4.gif" alt="Before and After 2" className="mx-auto mb-4 rounded-xl object-cover shadow-md max-w-full h-auto" />
             <p>“पहले धुंधला दिखता था, अब सब साफ़ दिख रहा है – केवल 5 दिन में असर!”</p>
           </div>
         </div>
       </section>
 
-      <section className="relative py-16 px-6 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-100">
+        <div className="text-center">
           <h2 className="text-3xl font-bold mb-6 text-blue-900">डॉ. नितिन के बारे में</h2>
           <p className="text-lg text-gray-800 leading-relaxed">
             डॉ. नितिन पिछले 20 वर्षों से आयुर्वेदिक चिकित्सा में कार्यरत हैं और उन्होंने हजारों मरीजों की आँखों की समस्याओं का सफलतापूर्वक इलाज किया है।
@@ -150,34 +150,34 @@ export default function VisionVedaPage() {
           <img
             src="/images/5qcGc.webp"
             alt="Dr. Nitin Bottom Left"
-            className="w-24 sm:w-36 md:w-44 rounded-lg shadow-lg"
+            className="w-24 sm:w-36 md:w-44 rounded-xl shadow-md"
           />
           <img
             src="/images/7f376.avif"
             alt="Dr. Nitin Top Right"
-            className="w-24 sm:w-36 md:w-44 rounded-lg shadow-lg"
+            className="w-24 sm:w-36 md:w-44 rounded-xl shadow-md"
           />
         </div>
       </section>
 
-      {/* Ayurvedic CTA */}
-      <section className="py-16 px-6 bg-yellow-50 text-center">
-        <h2 className="text-3xl font-bold mb-4">एक आयुर्वेदिक समाधान</h2>
-        <p className="text-lg mb-6 max-w-xl mx-auto">
-          Vision Veda एक आयुर्वेदिक दवा है जो आँखों की रोशनी को लौटाने में मदद करती है। इसे डॉक्टर और दुकानदारों ने मिलकर तैयार किया है।
-        </p>
-        <button className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition">
-          ₹499 में आज ही पाएं
-        </button>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-yellow-50 text-center">
+        <div className="space-y-6">
+          <h2 className="text-3xl font-bold mb-4">एक आयुर्वेदिक समाधान</h2>
+          <p className="text-lg mb-6 max-w-xl mx-auto leading-relaxed">
+            Vision Veda एक आयुर्वेदिक दवा है जो आँखों की रोशनी को लौटाने में मदद करती है। इसे डॉक्टर और दुकानदारों ने मिलकर तैयार किया है।
+          </p>
+          <button className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-200 ease-in-out focus:ring">
+            ₹499 में आज ही पाएं
+          </button>
+        </div>
       </section>
 
-      {/* Offer Section */}
-      <section className="min-h-screen bg-white text-center px-4 py-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen bg-white text-center py-10">
         <div className="max-w-xl mx-auto">
           <img
             src="/images/vision veda (1).webp"
             alt="Vision Veda"
-            className="mx-auto mb-4 max-w-full h-auto"
+            className="mx-auto mb-4 max-w-full h-auto rounded-xl object-cover shadow-md"
           />
           <p className="text-lg font-medium">
             कीमत <s>3000 INR</s> अभी खरीदें और समय सीमा से पहले खरीदें और 50% छूट पाएं केवल (1499 INR) 30 दिन का कोर्स
@@ -191,7 +191,6 @@ export default function VisionVedaPage() {
           <p className="text-2xl font-black text-gray-800">EXPIRED</p>
         </div>
 
-        {/* Form */}
         <section className="max-w-md mx-auto mt-10">
           <form
             onSubmit={handleSubmit}
@@ -206,7 +205,7 @@ export default function VisionVedaPage() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="आपका पूरा नाम"
-                className="w-full mt-1 p-2 border rounded"
+                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
@@ -218,7 +217,7 @@ export default function VisionVedaPage() {
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="आपका मोबाइल नंबर"
-                className="w-full mt-1 p-2 border rounded"
+                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
@@ -230,7 +229,7 @@ export default function VisionVedaPage() {
                 value={form.address}
                 onChange={handleChange}
                 placeholder="आपका पूरा पता"
-                className="w-full mt-1 p-2 border rounded"
+                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
@@ -242,19 +241,18 @@ export default function VisionVedaPage() {
                 value={form.pincode}
                 onChange={handleChange}
                 placeholder="आपका क्षेत्र पिनकोड"
-                className="w-full mt-1 p-2 border rounded"
+                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-red-600 text-white py-2 text-lg rounded hover:bg-red-700"
+              className="w-full bg-red-600 text-white py-2 text-lg rounded-full font-semibold hover:bg-red-700 transition duration-200 ease-in-out focus:ring-2 focus:ring-red-400"
             >
               (ORDER NOW) 50% छूट के साथ ऑर्डर करें
             </button>
           </form>
         </section>
 
-        {/* User Reviews */}
         <section className="max-w-4xl mx-auto mt-12">
           <h3 className="text-xl font-semibold mb-6">User Reviews</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -271,7 +269,6 @@ export default function VisionVedaPage() {
         </section>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-6">
         <p>© 2025 Vision Veda | सभी अधिकार सुरक्षित</p>
       </footer>
