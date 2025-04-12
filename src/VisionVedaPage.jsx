@@ -34,9 +34,9 @@ export default function VisionVedaPage() {
 
   return (
     <div className="bg-white text-gray-900 font-sans">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-amber-100 to-orange-200 flex flex-col items-center justify-center text-center" style={{ height: "4cm", minHeight: "200px" }}>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-6 bg-gradient-to-br from-amber-100 to-orange-200 flex flex-col items-center justify-center text-center" style={{ padding: "2rem 0" }}>
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
             आपकी आँखों की रोशनी वापस ला सकता है Vision Veda
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mb-6 leading-relaxed">
