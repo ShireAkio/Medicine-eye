@@ -89,17 +89,35 @@ export default function VisionVedaPage() {
       </section>
 
       <section className="py-12 px-6 bg-blue-50">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <img
             src="/images/4f04c6d4-e16f-11eb-a36b-cbbf425404a0_1625920833567.avif"
             alt="Doctor Consultation"
-            className="w-full h-auto rounded-xl shadow"
+            className="w-full h-auto rounded-xl shadow max-w-full"
           />
           <div>
             <h2 className="text-2xl font-bold mb-4 text-blue-800">हमारे कंसल्टेंट से बात करना क्यों ज़रूरी है?</h2>
             <p className="text-lg text-gray-800">
               Vision Veda दवा हर व्यक्ति के लिए अलग-अलग तरह से काम कर सकती है। हमारी टीम के आयुर्वेदिक कंसल्टेंट आपकी आँखों की स्थिति, उम्र, जीवनशैली और अन्य स्वास्थ्य समस्याओं को समझकर आपके लिए सबसे उपयुक्त डोज़ और कोर्स तय करते हैं। यह व्यक्तिगत मार्गदर्शन उपचार को अधिक प्रभावशाली बनाता है।
             </p>
+            <div className="mt-6 flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20Vision%20Veda"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-green-600 w-full sm:w-auto flex items-center justify-center gap-2"
+              >
+                <span>📱</span>
+                WhatsApp पर बात करें
+              </a>
+              <a
+                href="tel:+919999999999"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-blue-700 w-full sm:w-auto flex items-center justify-center gap-2"
+              >
+                <span>📞</span>
+                कॉल करें: +91 99999 99999
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -107,15 +125,38 @@ export default function VisionVedaPage() {
       {/* Testimonials */}
       <section className="py-12 px-6 bg-white">
         <h2 className="text-3xl font-bold text-center mb-8">Before & After</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-center">
-            <img src="/images/5.webp" alt="Before and After 1" className="mx-auto mb-4 rounded-xl shadow" />
+            <img src="/images/5.webp" alt="Before and After 1" className="mx-auto mb-4 rounded-xl shadow max-w-full h-auto" />
             <p>“मेरे पिताजी को नई रोशनी मिली। अब सब कुछ देख सकते हैं। धन्यवाद Vision Veda!”</p>
           </div>
           <div className="text-center">
-            <img src="/images/sc5-img4.gif" alt="Before and After 2" className="mx-auto mb-4 rounded-xl shadow" />
+            <img src="/images/sc5-img4.gif" alt="Before and After 2" className="mx-auto mb-4 rounded-xl shadow max-w-full h-auto" />
             <p>“पहले धुंधला दिखता था, अब सब साफ़ दिख रहा है – केवल 5 दिन में असर!”</p>
           </div>
+        </div>
+      </section>
+
+      <section className="relative py-16 px-6 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6 text-blue-900">डॉ. नितिन के बारे में</h2>
+          <p className="text-lg text-gray-800 leading-relaxed">
+            डॉ. नितिन पिछले 20 वर्षों से आयुर्वेदिक चिकित्सा में कार्यरत हैं और उन्होंने हजारों मरीजों की आँखों की समस्याओं का सफलतापूर्वक इलाज किया है।
+            उनकी विशेषज्ञता और अनुभव के कारण Vision Veda जैसे उत्पाद को सफल बनाया गया। उन्होंने हिमालयी जड़ी-बूटियों और पारंपरिक आयुर्वेदिक नुस्खों को
+            मिलाकर एक अनोखा इलाज विकसित किया है जो बिना सर्जरी के आँखों की रोशनी लौटाने में सहायक है।
+          </p>
+        </div>
+        <div className="relative w-full flex justify-between mt-8">
+          <img
+            src="/images/5qcGc.webp"
+            alt="Dr. Nitin Bottom Left"
+            className="w-24 sm:w-36 md:w-44 rounded-lg shadow-lg"
+          />
+          <img
+            src="/images/7f376.avif"
+            alt="Dr. Nitin Top Right"
+            className="w-24 sm:w-36 md:w-44 rounded-lg shadow-lg"
+          />
         </div>
       </section>
 
@@ -134,9 +175,9 @@ export default function VisionVedaPage() {
       <section className="min-h-screen bg-white text-center px-4 py-10">
         <div className="max-w-xl mx-auto">
           <img
-            src="src/images/vision veda (1).webp"
+            src="/images/vision veda (1).webp"
             alt="Vision Veda"
-            className="mx-auto mb-4"
+            className="mx-auto mb-4 max-w-full h-auto"
           />
           <p className="text-lg font-medium">
             कीमत <s>3000 INR</s> अभी खरीदें और समय सीमा से पहले खरीदें और 50% छूट पाएं केवल (1499 INR) 30 दिन का कोर्स
@@ -216,7 +257,7 @@ export default function VisionVedaPage() {
         {/* User Reviews */}
         <section className="max-w-4xl mx-auto mt-12">
           <h3 className="text-xl font-semibold mb-6">User Reviews</h3>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, index) => (
               <div key={index} className="bg-white p-4 rounded-xl shadow border">
                 <div className="flex items-center gap-4 mb-2">
