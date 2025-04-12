@@ -35,7 +35,7 @@ export default function VisionVedaPage() {
   return (
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero */}
-      <section className="min-h-screen bg-gradient-to-br from-amber-100 to-orange-200 flex flex-col items-center justify-center text-center px-4">
+      <section className="bg-gradient-to-br from-amber-100 to-orange-200 flex flex-col items-center justify-center text-center px-4" style={{ height: "4cm", minHeight: "200px" }}>
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           आपकी आँखों की रोशनी वापस ला सकता है Vision Veda
         </h1>
@@ -88,6 +88,22 @@ export default function VisionVedaPage() {
         )}
       </section>
 
+      <section className="py-12 px-6 bg-blue-50">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <img
+            src="src/images/4f04c6d4-e16f-11eb-a36b-cbbf425404a0_1625920833567.avif"
+            alt="Doctor Consultation"
+            className="w-full h-auto rounded-xl shadow"
+          />
+          <div>
+            <h2 className="text-2xl font-bold mb-4 text-blue-800">हमारे कंसल्टेंट से बात करना क्यों ज़रूरी है?</h2>
+            <p className="text-lg text-gray-800">
+              Vision Veda दवा हर व्यक्ति के लिए अलग-अलग तरह से काम कर सकती है। हमारी टीम के आयुर्वेदिक कंसल्टेंट आपकी आँखों की स्थिति, उम्र, जीवनशैली और अन्य स्वास्थ्य समस्याओं को समझकर आपके लिए सबसे उपयुक्त डोज़ और कोर्स तय करते हैं। यह व्यक्तिगत मार्गदर्शन उपचार को अधिक प्रभावशाली बनाता है।
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-12 px-6 bg-white">
         <h2 className="text-3xl font-bold text-center mb-8">Before & After</h2>
@@ -118,7 +134,7 @@ export default function VisionVedaPage() {
       <section className="min-h-screen bg-white text-center px-4 py-10">
         <div className="max-w-xl mx-auto">
           <img
-            src="https://via.placeholder.com/400x300.png?text=Vision+Veda+Product"
+            src="src/images/vision veda (1).webp"
             alt="Vision Veda"
             className="mx-auto mb-4"
           />
