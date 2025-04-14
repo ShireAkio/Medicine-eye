@@ -54,7 +54,7 @@ export default function VisionVedaPage() {
     
     emailjs.send(
       'service_lh46qc5', // replace with your actual EmailJS service ID
-      'template_l181phr', // replace with your actual EmailJS template ID
+      'template_ole0tpc', // replace with your actual EmailJS template ID
       templateParams,
       '3ewQRIokNpJA-NPa9' // replace with your actual EmailJS public key
     )
