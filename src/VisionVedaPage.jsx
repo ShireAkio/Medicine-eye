@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
 // Simple Star component
 const Star = ({ className }) => (
@@ -11,6 +12,7 @@ const Star = ({ className }) => (
     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
   </svg>
 );
+
 
 export default function VisionVedaPage() {
   const [email, setEmail] = useState("");
@@ -41,7 +43,29 @@ export default function VisionVedaPage() {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Order received! You'll be contacted shortly.");
+    
+    const templateParams = {
+      from_name: form.name,
+      phone: form.phone,
+      address: form.address,
+      pincode: form.pincode,
+      to_email: "your_email@example.com", // optional, depends on your emailJS template setup
+    };
+    
+    emailjs.send(
+      'service_lh46qc5', // replace with your actual EmailJS service ID
+      'template_l181phr', // replace with your actual EmailJS template ID
+      templateParams,
+      '3ewQRIokNpJA-NPa9' // replace with your actual EmailJS public key
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      alert("Order received! You'll be contacted shortly.");
+      setForm({ name: "", phone: "", address: "", pincode: "" }); // Reset form
+    }, (err) => {
+      console.error('FAILED...', err);
+      alert("Something went wrong. Please try again.");
+    });
   };
 
   const openPopup = () => setIsPopupOpen(true);
@@ -57,22 +81,22 @@ export default function VisionVedaPage() {
   const reviews = [
     {
       name: "Kriti Chopra",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDdHdZHLJ7kQ7b8_BnX-ZPkhfwg2CPGjkQDw&s",
       text: `Mere Mummy Apne Ankho Ko le Kar Bhut Pershan Thi Fir Ek Din Maine Vision Amrit Ka Ads Facebook Par Dekha Order Kiya Mere Mummy ek 1 month use karne ke baad muje btya ki abn unke ankho mai phle se aram hai Thankyou Vision Amrit`
     },
     {
       name: "Rajeev Arora",
-      image: "https://randomuser.me/api/portraits/men/2.jpg",
+      image: "https://imgs.search.brave.com/Bq9Nko1W0T9Hc8njOexb4hu1Pp0i5MOa1CHf-jLTnjU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9p/bmRpYW4tbWFuLXBv/cnRyYWl0LXRlbXBs/ZV81Mzg3Ni0xNDUz/NS5qcGc_c2VtdD1h/aXNfaHlicmlkJnc9/NzQw",
       text: `Hello Team Vision Amrit Muje Dwa Mnage Hue Aaj 20 Din se Upar hogye Hai Phle To muje lga tha yeh fruad hai but ab isko ishtmal karne ke baad muje Vision Amrit pr pura bharosa hai thankyou Vision Amrit`
     },
     {
       name: "Abhishek Singh",
-      image: "https://randomuser.me/api/portraits/men/3.jpg",
+      image: "https://imgs.search.brave.com/40SnPJNUIiVJX1M947WAkMKXl1MXme2ZMeOaZ2UGzQU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTgz/Mjk4NTgyL3Bob3Rv/L3Byb2ZpbGUtb2Yt/YW4tYXNpYW4tbWFu/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1ZelZaU20teDJO/YlRTRmc2eGQ4VEZE/ZXo3TjRYSmFtMm45/aXBXaWFkLWxVPQ",
       text: `Hello बढ़ती उम्र के कारण, मेरी आँखों में समस्या आ गई थी। एक दिन में फेसबुक चला`
     },
     {
       name: "Shikha Singh",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDhl5_Rjr92qRbO3zzt9i6JnQ3XJNhsB7zIg&s",
       text: `Mainne apni dadi ke liye dawa mangwayi thi, aaj mujhe mangwayi ek mahina ho gaya, par jab maine mangwayi thi iska price ₹3000 tha. Abhi aap logon ne isko 50% off diya hai. Dawa bahut asardaar hai, par aap logon ne mujhe 50% off nahi diya.`
     },
     {
@@ -82,8 +106,8 @@ export default function VisionVedaPage() {
     },
     {
       name: "Manjeet Kumar",
-      image: "https://randomuser.me/api/portraits/men/6.jpg",
-      text: `Meri ladki ki ānkhon meṁ samasyā thī. Wō dūr kā paṛh nahīn saktī thī aur chashmā kā upyōg kartī thī, jisse usē skūl meṁ bahut zyada torture kiyā jātā thā. Ek din maine Vision Amrit ke baare meṁ dekhā aur samjhā. Maine apnā nām aur number dālā, tō unke adhikārī kā mere paas call āyā. Unhone mujhe dava ke baare meṁ bahut pyār se samjhāyā aur āswāsan diyā ki merī ladkī isse thīk ho jāyegī. Maine unkī baat par bharosā karke dava mangwāyī. Merī ladkī bārah saal kī thī jab maine yeh dava mangwāyī thī. Āj uskā chaudahwā janmdin hai, aur ab uska chashmā pūrī tarah se hat chukā hai Thankyou Vision Amrit`
+      image: "data:image/jpeg;base64,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",
+      text: `मेरी लड़की की आँखों में समस्या थी। वह दूर का पढ़ नहीं सकती थी और चश्मा का उपयोग करती थी, जिससे उसे स्कूल में बहुत ज़्यादा टॉर्चर किया जाता था। एक दिन मैंने विज़न अमृत के बारे में देखा और समझा। मैंने अपना नाम और नंबर डाला, तो उनके अधिकारी का मेरे पास कॉल आया। उन्होंने मुझे दवा के बारे में बहुत प्यार से समझाया और आश्वासन दिया कि मेरी लड़की इससे ठीक हो जाएगी। मैंने उनकी बात पर भरोसा करके दवा मंगवाई। मेरी लड़की बारह साल की थी जब मैंने यह दवा मंगवाई थी। आज उसका चौदहवाँ जन्मदिन है, और अब उसका चश्मा पूरी तरह से हट चुका है। धन्यवाद विज़न अमृत।`
     },
     {
       name: "Gaurav Arora",
@@ -152,6 +176,22 @@ export default function VisionVedaPage() {
     </div>
   </div>
 </div>
+{/* WhatsApp Floating Button */}
+<a 
+  href="https://wa.me/+919220537662?text=Hello,%20I'm%20interested%20in%20Vision%20Amrit%20for%20my%20eyes." 
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 flex items-center justify-center"
+  style={{ width: '60px', height: '60px' }}
+>
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 448 512" 
+    className="w-8 h-8 fill-current"
+  >
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+  </svg>
+</a>
         {/* First Order Now Button - consistent styling with the one below */}
         <div className="flex justify-center mb-6">
           <button 
@@ -465,6 +505,7 @@ export default function VisionVedaPage() {
             ))}
           </div>
         </section>
+        
       </div>
     </div>
   );
