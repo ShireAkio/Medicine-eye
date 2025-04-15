@@ -22,6 +22,49 @@ export default function VisionVedaPage() {
   const [seconds, setSeconds] = useState(0);
 
   // Timer effect
+
+  // useEffect(() => {
+  //   const updateTimeLeft = () => {
+  //     const now = new Date();
+  
+  //     // Get current IST time
+  //     const istOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
+  //     const nowIST = new Date(now.getTime() + istOffset);
+  
+  //     let targetIST = new Date(nowIST);
+  
+  //     // Set target time to 10 PM IST
+  //     targetIST.setHours(22, 0, 0, 0);
+  
+  //     // If it's past 10 PM IST, set target to 5 AM next day
+  //     if (nowIST.getTime() >= targetIST.getTime()) {
+  //       targetIST.setDate(targetIST.getDate() + 1);
+  //       targetIST.setHours(5, 0, 0, 0);
+  //     }
+  
+  //     const diff = targetIST.getTime() - nowIST.getTime();
+  
+  //     if (diff <= 0) {
+  //       setHours(0);
+  //       setMinutes(0);
+  //       setSeconds(0);
+  //       return;
+  //     }
+  
+  //     const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  //     const mins = Math.floor((diff / (1000 * 60)) % 60);
+  //     const secs = Math.floor((diff / 1000) % 60);
+  
+  //     setHours(hrs);
+  //     setMinutes(mins);
+  //     setSeconds(secs);
+  //   };
+  
+  //   updateTimeLeft(); // run once on mount
+  //   const timer = setInterval(updateTimeLeft, 1000);
+  
+  //   return () => clearInterval(timer);
+  // }, []);
   useEffect(() => {
     const timer = setInterval(() => {
       if (seconds > 0) {
@@ -45,18 +88,18 @@ export default function VisionVedaPage() {
     e.preventDefault();
     
     const templateParams = {
-      from_name: form.name,
+      name: form.name,
       phone: form.phone,
       address: form.address,
       pincode: form.pincode,
-      to_email: "your_email@example.com", // optional, depends on your emailJS template setup
+      to_email: "your_email@example.com", 
     };
     
     emailjs.send(
-      'service_lh46qc5', // replace with your actual EmailJS service ID
-      'template_ole0tpc', // replace with your actual EmailJS template ID
+      'service_lh46qc5', 
+      'template_ole0tpc', 
       templateParams,
-      '3ewQRIokNpJA-NPa9' // replace with your actual EmailJS public key
+      '3ewQRIokNpJA-NPa9' 
     )
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
